@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="admin" content="#000Intelligence">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/keycode.png">
+    <title>Javascript KeyCodes</title>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+
+    <!-- icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a id="github" class="flex" href="https://github.com/000Intelligence" target="_blank">
+        <ion-icon name="logo-github"></ion-icon>
+    </a>
+
+    <header id="header" class="flex">
+        <div class="logo-cr">
+            <h1 class="title">JS.KeyCodes</h1>
+        </div>
+
+        <div class="header-buttons">
+            <button class="btn table" id="view-table" data-table-status="false">KeY Lists</button>
+            <button class="btn theme" id="ch-theme" data-theme="dark">Light Theme</button>
+        </div>
+    </header>
+
+    <!-- main container -->
+    <main id="main" class="flex">
+        <!-- intro text -->
+        <div class="intro container flex">
+            <p class="intro-text">Press any Key to get Javascipt KeyCode</p>
+        </div>
+
+        <!-- show key codes container -->
+        <div id="keys-container" class="hidden">
+            <div id="keycode">20</div>
+            <div class="boxes">
+                <div class="box flex" data-tooltip="Click to copy">
+                    <p class="event">event.code</p>
+                    <h1 id="e-key"></h1>
+                    <p id="character-name" class="muted-text"></p>
+                </div>
+                <div class="box flex" data-tooltip="Click to copy">
+                    <p class="event">event.location</p>
+                    <h1 id="event-location"></h1>
+                    <p id="e-location" class="muted-text"></p>
+                </div>
+                <div class="box flex" data-tooltip="Click to copy">
+                    <p class="event">event.which</p>
+                    <h1 id="e-which"></h1>
+                </div>
+                <div class="box flex" data-tooltip="Click to copy">
+                    <p class="event">event.code</p>
+                    <h1 id="e-code"></h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- js mug bg -->
+        <img id="main-bg" src="/images/js-mug.jpg" alt="javascript mug">
+
+        <!-- notifications container -->
+        <div class="notification-bars"></div>
+    </main>
+    <!-- main container end-->
+
+    <script type="text/javascript" src="app.js" defer></script>
+</body>
+
+</html>

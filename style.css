@@ -1,0 +1,452 @@
+/* : ) */
+
+:root {
+  --primary-clr: #9965f4;
+  --secondary-clr: #7b1fa2;
+  --border-clr: #75e900;
+  --dark-clr: #121212;
+  --white: #f5f5f5;
+  --white-800: rgba(255, 255, 255, 87%);
+  --white-600: rgba(255, 255, 255, 60%);
+  --white-300: rgba(255, 255, 255, 38%);
+  --transtion: 0.2s ease-in-out;
+
+  /* fonts */
+  --medium: 1.6rem;
+  --big: 2.4rem;
+  --very-big: 4rem;
+}
+
+/* light theme */
+.light-theme {
+  --dark-clr: var(--white);
+  --white-800: rgba(0, 0, 0, 87%);
+  --white-600: rgba(0, 0, 0, 60%);
+  --white-300: rgba(0, 0, 0, 38%);
+}
+.light-theme .btn {
+  color: var(--white);
+}
+.light-theme #github ion-icon {
+  color: var(--white);
+}
+.light-theme .event {
+  color: var(--white);
+}
+.light-theme [data-tooltip]::after,
+.light-theme [data-tooltip]::before {
+  color: var(--white);
+}
+/* light theme */
+
+::selection {
+  color: var(--white-800);
+  background: var(--primary-clr);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  transition: 0.1s ease-in-out;
+}
+
+html {
+  font-size: 62.5% /* 1rem = 10px */;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  background: var(--dark-clr);
+  color: var(--white-800);
+  overflow-x: hidden;
+}
+
+/* global classes */
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  cursor: pointer;
+  color: var(--white-800);
+  transition: var(--transtion);
+  background: var(--primary-clr);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  padding: 1rem;
+  font-size: var(--medium);
+  font-family: inherit;
+}
+
+.btn + .btn {
+  margin-left: 2rem;
+}
+
+.btn:hover,
+.box:focus {
+  background: var(--secondary-clr);
+}
+
+.title {
+  color: var(--white-800);
+  font-size: var(--big);
+}
+
+@media (max-width: 470px) {
+  .title {
+    margin-bottom: 1rem;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+/* global classes */
+
+/* github icon */
+#github {
+  position: fixed;
+  bottom: -10px;
+  left: 0;
+  background: var(--primary-clr);
+  transition: var(--transtion);
+  width: 100px;
+  height: 100px;
+  border-radius: 0 100px 0 0;
+}
+
+@media (max-width: 480px) {
+  #github {
+    display: none;
+  }
+}
+
+#github:hover {
+  background: var(--secondary-clr);
+}
+
+#github ion-icon {
+  color: var(--white-800);
+  font-size: var(--very-big);
+}
+
+/* header */
+#header {
+  justify-content: space-between;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+}
+
+@media (max-width: 470px) {
+  #header {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+#main {
+  flex-direction: column;
+}
+
+/* intro text styles */
+.intro {
+  min-height: 80vh;
+  animation: opacity 0.4s ease-in-out forwards;
+  opacity: 0;
+  transform: scale(0);
+}
+
+.intro-text {
+  font-size: var(--very-big);
+  text-align: center;
+}
+
+.intro-text:hover {
+  text-shadow: none;
+}
+
+/* js mug image */
+#main-bg {
+  position: fixed;
+  top: 0;
+  left: 20%;
+  z-index: -1;
+  opacity: 0.2;
+  max-width: 100%;
+}
+
+@media (max-width: 800px) {
+  #main-bg {
+    display: none;
+  }
+}
+
+/* keys container */
+#keycode {
+  font-size: 20rem;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0);
+  animation: opacity 0.4s ease-in-out forwards;
+}
+
+/* boxes container */
+.boxes {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 1100px) {
+  .boxes {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 800px) {
+  .boxes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 530px) {
+  .boxes {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* box styles */
+.box {
+  width: 250px;
+  flex-direction: column;
+  cursor: pointer;
+  border: 1px solid var(--white-300);
+  border-radius: 10px;
+  background: var(--dark-clr);
+  box-shadow: 0 4px 0 rgba(153, 101, 244, 0.5);
+  opacity: 0;
+  transform: scale(0);
+  animation: opacity 0.4s ease-in-out forwards;
+  padding: 4rem 1rem 1rem;
+  position: relative;
+}
+
+.box:hover {
+  opacity: 0.9 !important;
+}
+
+/* box tooltips */
+[data-tooltip]::after,
+[data-tooltip]::before {
+  pointer-events: none;
+  position: absolute;
+  right: 15%;
+  background: var(--primary-clr);
+  transform: translateX(-50%);
+  transition: var(--transtion);
+  opacity: 0;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  padding: 0.4rem 0.6rem;
+  top: -45px;
+  font-size: 1.2rem;
+  border-radius: 6px;
+}
+
+[data-tooltip]::before {
+  content: "";
+  clip-path: polygon(0 0, 50% 60%, 100% 0);
+  width: 30px;
+  height: 30px;
+  top: -25px;
+  right: 39%;
+}
+
+.box:hover::after,
+.box:hover::before {
+  opacity: 1;
+}
+
+/* box header */
+.event {
+  background: var(--secondary-clr);
+  padding: 0.4rem;
+  border-radius: 10px 10px 0 0;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.box h1 {
+  font-size: 2.6rem;
+}
+
+/* muted text class */
+.muted-text {
+  color: var(--white-600);
+  font-size: 1.2rem;
+}
+
+/* boxes scale in animation */
+@keyframes opacity {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.box:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.box:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.box:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* keys table styles */
+.keys-table {
+  max-height: 500px;
+  width: 500px;
+  max-width: 95%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  animation: opacity 0.4s ease-in-out forwards;
+  opacity: 0;
+  transform: scale(0);
+  border: 1px solid var(--primary-clr);
+  border-radius: 10px;
+  background: var(--dark-clr);
+  padding: 0;
+}
+
+/* for customize scrollbar this only worked on chrome browser */
+.keys-table::-webkit-scrollbar {
+  width: 10px;
+}
+.keys-table::-webkit-scrollbar-thumb {
+  background: var(--primary-clr);
+  border-radius: 10px;
+}
+.keys-table::-webkit-scrollbar-track {
+  background: var(--white-800);
+  border-radius: 10px;
+}
+
+/* keys lists table styles */
+.keys-table tr {
+  border-bottom: 1px solid var(--primary-clr);
+  width: 100%;
+  padding: 0.5rem 0 0.5rem 2rem;
+  transition: var(--transtion);
+}
+
+.keys-table thead {
+  width: 100%;
+}
+
+.keys-table tr {
+  justify-content: space-between;
+  width: 100%;
+  font-size: 3rem;
+  padding: 0.5rem 2rem;
+}
+.keys-table tr {
+  display: flex;
+}
+
+.keys-table tr:hover {
+  background: var(--primary-clr);
+  color: var(--white-800);
+}
+
+.keys-table tr td {
+  font-size: 2rem;
+}
+
+/* notification styles */
+.notification-bars {
+  position: fixed;
+  left: 45px;
+  top: 60px;
+}
+
+.noty {
+  font-size: var(--medium);
+  background: #4c6ef5;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  transition: 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  animation: noty-animation 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6) forwards;
+  pointer-events: none;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes noty-animation {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* notifications out animation */
+.noty-out {
+  animation: noty-animation-out 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6)
+    forwards;
+}
+
+@keyframes noty-animation-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  70% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  100% {
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+}
+
+/* End */
