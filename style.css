@@ -37,6 +37,10 @@
 .light-theme [data-tooltip]::before {
   color: var(--white);
 }
+
+.light-theme .noty{
+  color: var(--white);
+}
 /* light theme */
 
 ::selection {
