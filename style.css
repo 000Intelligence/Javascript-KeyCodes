@@ -303,6 +303,7 @@ body {
 
 .box h1 {
   font-size: 2.6rem;
+  pointer-events : none;
 }
 
 /* muted text class */
